@@ -1,0 +1,63 @@
+Testes Mobile
+
+Existem vários tipos de dispositivos:
+- Celular / Smartphone <-- foco
+- Tablet
+- Smartwatch / SmartBand
+- SmarTV
+- Dispositivo Vestivel
+- Software embarcado (Eletrodomésticos, automóvel, etc)
+
+2 Sistemas Operacionais (SOs) que prevalecem: Android e o iOS
+O Appium serve para testar os 2 SOs
+
+Hardware
+- Compatível com Intel i5, 16 Gb ou mais
+- i7 ou i9, 32 ou 64 Gb, 2 Tb de SSD, Placa de Vídeo de 4 ou 8 Gb
+
+Alternativa
+- Device Farm (Fazenda de dispositivos): Sauce Labs, Perfecto, AWS, etc
+
+A questão do iPhone
+- Se você tiver um computador ou notebook com Mac OS X
+---> Executar testes em iPhones, iPads e também em Android
+- Se você tem um computador com Windows ou Linux
+---> Só executa testes para Android
+
+Tipo de Aplicação
+- WebDav, WebApp/Site que formatado como App
+- Nativo: é construido para um SO (2 projetos: Android e iOS)
+- Hibrido: é criado um script base que compila nos 2 SOs
+
+Exemplo de Roteiro de Automação Web
+Pré-requisitos: Chrome, VS Code, Selenium, NUnit e ChromeDriver
+Como é a criação do script: 
+inspecionar, descobrir o seletor e usá-lo para automatizar
+
+Roteiro de Automação Mobile
+
+Se fossemos testar executando no nosso computador, precisariamos
+- Emulador
+- Dispositivo ligado via cabo USB
+- SDK para cada versão do Android ou IOS que a gente fosse testar
+- Pensando em emuladores, você vai precisar de uma imagem / vm  
+  de cada modelo que for testar
+- Appium Desktop / Server
+
+Caso contrario, usaremos os testes pela Alternativa (Sauce Labs)
+
+1 - Criar uma conta no Sauce Labs
+2 - Upload do App alvo dos testes
+3 - Upload de um APK Info
+4 - Descobrir o AppPackage e o AppActivity do App 
+    AppPackage  = com.saucelabs.mydemoapp.android
+    AppActivity = com.saucelabs.mydemoapp.android.view.activities.SplashActivity 
+5 - Instalar e utilizar o Appium Inspector para mapear os elementos
+6 - Exportar o código gerado ou pelo menos os seletores
+7 - Importar ou usar os seletores descobertos  
+
+
+
+Problemas de compatibilidade
+- O Appium é um derivado do Selenium WebDriver / Selenium Hub
+- Possui vínculos com o Selenium e algumas vezes geram conflitos
