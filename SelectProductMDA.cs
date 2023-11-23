@@ -26,6 +26,8 @@ public class SelectProductMDA
         options.AddAdditionalCapability(MobileCapabilityType.PlatformVersion, "9.0");
         options.AddAdditionalCapability(MobileCapabilityType.DeviceName, "Samsung Galaxy S9 FHD GoogleAPI Emulator");
         options.AddAdditionalCapability(MobileCapabilityType.App, "storage:filename=mda-2.0.0-21.apk");
+        options.AddAdditionalCapability("appPackage", "com.saucelabs.mydemoapp.android");
+        options.AddAdditionalCapability("appActivity", "com.saucelabs.mydemoapp.android.view.activities.SplashActivity");
         options.AddAdditionalCapability("newCommandTimeout", 90); // espera elementos por 90s
 
         // Inicializa o Appium como Android
@@ -46,11 +48,11 @@ public class SelectProductMDA
         Assert.That(driver.FindElement(MobileBy.AccessibilityId("App logo and name")).Displayed, Is.True);
 
         // Clicar no produto mochila
-        driver.FindElement(MobileBy.AccessibilityId("Sauce Labs Back Pack")).Click();
+        driver.FindElement(MobileBy.AccessibilityId("Sauce Labs Backpack")).Click();
 
         // Verificar o nome do produto na tela do produto
         String tituloProduto = driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/productTV")).Text;
-        Assert.That(tituloProduto, Is.EqualTo("Sauce Labs Back Pack"));
+        Assert.That(tituloProduto, Is.EqualTo("Sauce Labs Backpack"));
 
         // Exemplo com 1 linha
         // Assert.That(driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/productTV")).Text, Is.EqualTo("Sauce Labs Back Packs")); 
@@ -74,7 +76,7 @@ public class SelectProductMDA
 
         // Validar o nome do produto no carrinho
         tituloProduto = driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/cartIV")).Text;
-        Assert.That(tituloProduto, Is.EqualTo("Sauce Labs Back Pack"));
+        Assert.That(tituloProduto, Is.EqualTo("Sauce Labs Backpack"));
 
         // Validar o preco do produto no carrinho
         precoProduto = driver.FindElement(MobileBy.Id("com.saucelabs.mydemoapp.android:id/priceTV")).Text;
